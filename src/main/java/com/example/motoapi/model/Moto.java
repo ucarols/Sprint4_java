@@ -5,7 +5,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "tab_motos")
+@Table(name = "TBL_MOTOS")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,6 +14,7 @@ public class Moto {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "moto_seq")
     @SequenceGenerator(name = "moto_seq", sequenceName = "MOTO_SEQ", allocationSize = 1)
+    @Column(name = "id_moto")
     private Long id;
 
     @Column(nullable = false, unique = true)
@@ -29,7 +30,11 @@ public class Moto {
 
     private String observacao;
 
+    @Column(name = "data_entrada")
     private LocalDateTime dataHoraEntrada;
 
     private String imagemUrl;
+
+    @Column(name = "id_patio")
+    private Long idPatio;
 }

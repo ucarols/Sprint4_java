@@ -310,3 +310,4 @@ curl -X GET http://localhost:8081/api/estatisticas
 ### Integrantes
 - Caroline de Oliveira - RM 559123
 - Giulia Correa Camillo - RM 554473
+- Lavinia Soo Hyun Park - RM 555679

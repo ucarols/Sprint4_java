@@ -1,0 +1,6 @@
+CREATE TABLE TBL_PATIOS (
+    id_patio NUMBER(10) PRIMARY KEY,
+    cor VARCHAR2(30) NOT NULL,
+    descricao VARCHAR2(255),
+    capacidade NUMBER(12,2) NOT NULL
+);

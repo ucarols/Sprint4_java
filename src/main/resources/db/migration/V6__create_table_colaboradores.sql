@@ -1,0 +1,6 @@
+CREATE TABLE TBL_COLABORADORES (
+    id_colaborador NUMBER(10) PRIMARY KEY,
+    nome VARCHAR2(100) NOT NULL,
+    cargo VARCHAR2(50),
+    senha VARCHAR2(50)
+);
