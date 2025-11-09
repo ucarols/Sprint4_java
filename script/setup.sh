@@ -9,9 +9,15 @@ WEBAPP_NAME="motuswatchs4webapp"
 USERNAME="RM559123"
 PASSWORD="fiap"
 
-mv Sprint4_java/script/setup.sh .
+# RODAR MANUALMENTE
 
-chmod +x setup.sh
+# git clone https://github.com/ucarols/Sprint4_java.git
+
+# mv Sprint4_java/script/setup.sh .
+
+# chmod +x setup.sh
+
+# ./setup.sh
 
 az group create --name $RG --location $LOCATION
 
