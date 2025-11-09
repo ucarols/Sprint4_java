@@ -51,10 +51,7 @@ mvn clean package -DskipTests
 ## RODAR MANUALMENTE
 
 #cd Sprint4_java/
-#
-#az webapp deploy \
-#-g rg-s4-motuswatch -n motuswatchs4webapp \
-#--src-path ./target/moto-api-0.0.1-SNAPSHOT.jar \
-#--type jar
-#
+
+#az webapp deploy -g rg-s4-motuswatch -n motuswatchs4webapp --src-path ./target/moto-api-0.0.1-SNAPSHOT.jar --type jar
+
 #az webapp log tail -g rg-s4-motuswatch -n motuswatchs4webapp
