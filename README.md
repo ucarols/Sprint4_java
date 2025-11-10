@@ -94,7 +94,7 @@ O projeto **Motus Watch** foi desenvolvido de forma interdisciplinar, aplicando 
 - **MOBILE APPLICATION DEVELOPMENT**  
   Desenvolvimento da versão **mobile híbrida** com base nos conceitos da disciplina.  
   Demonstração será disponibilizada no YouTube:  
-  🎥 *(link do vídeo será inserido aqui)*
+  🎥 *(https://youtube.com/shorts/Uv6mqqyXsGQ?si=QDbjIVNjLrGZB-wq)*
 
 ---
 
