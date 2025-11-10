@@ -11,8 +11,6 @@ O MotusWatch é um sistema de gestão de motos que utiliza classificação por c
 - **Vermelho**: Reparos graves (prioridade alta)
 - **Roxo**: Problemas administrativos (até resolução)
 
-
-
 ### Funcionalidades Principais
 
 #### CRUD Completo
@@ -55,259 +53,56 @@ O MotusWatch é um sistema de gestão de motos que utiliza classificação por c
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Java 17** - Linguagem de programação
-- **Spring Boot 3.1.6** - Framework principal
-- **Spring Data JPA** - Persistência de dados
-- **Spring Web** - API REST
-- **Oracle Database** - Banco de dados relacional
-- **Lombok** - Redução de código boilerplate
-- **Maven** - Gerenciamento de dependências
-- **SpringDoc OpenAPI** - Documentação automática da API
-- **Bean Validation** - Validação de dados
+- **Java 17**
+- **Spring Boot 3.1.6**
+- **Spring Data JPA**
+- **Spring Web**
+- **Oracle Database**
+- **Lombok**
+- **Maven**
+- **SpringDoc OpenAPI**
+- **Bean Validation**
 
-## 📋 Pré-requisitos
+## 🚀 Deploy em Nuvem
 
-Antes de executar o projeto, certifique-se de ter instalado:
-
-- Java 17 ou superior
-- Maven 3.6+ 
-- IDE de sua preferência (IntelliJ IDEA, Eclipse, VS Code)
-
-## 🚀 Instalação e Execução
-
-### 1. Clone o repositório
-```bash
-https://github.com/ucarols/JavaSprint 
-cd JavaSprint
-```
-
-### 2. Execute o projeto com Maven
-```bash
-mvn spring-boot:run
-```
-
-### 3. Ou compile e execute o JAR
-```bash
-mvn clean package
-java -jar target/moto-api-0.0.1-SNAPSHOT.jar
-```
-
-### 4. Acesse a aplicação
-A aplicação estará disponível em: `http://localhost:8081`
-
-## 📡 Endpoints da API
-
-### 🏍️ Motos - `/api/motos`
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| `GET` | `/` | Lista todas as motocicletas |
-| `GET` | `/{id}` | Busca uma motocicleta por ID |
-| `GET` | `/placa/{placa}` | Busca uma motocicleta por placa |
-| `GET` | `/categoria/{categoria}` | Lista motos por categoria (VERDE, AMARELA, VERMELHA, ROXA) |
-| `POST` | `/` | Cadastra uma nova motocicleta |
-| `PUT` | `/{id}` | Atualiza uma motocicleta existente |
-| `DELETE` | `/{id}` | Remove uma motocicleta |
-
-### 🚨 Alertas - `/api/alertas`
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| `GET` | `/` | Lista motos com alertas ativos (ATENÇÃO ou CRÍTICO) |
-| `GET` | `/fora-prazo` | Lista motos que ultrapassaram o tempo limite |
-| `GET` | `/prioridade` | Lista motos ordenadas por prioridade (mais urgentes primeiro) |
-
-### 📊 Estatísticas - `/api/estatisticas`
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| `GET` | `/` | Retorna dashboard completo com métricas do pátio |
-
-### Exemplo de Requisição POST/PUT
-```json
-{
-  "placa": "ABC1234",
-  "modelo": "SPORT",
-  "categoria": "VERDE",
-  "observacao": "Moto ok",
-  "dataHoraEntrada": "2024-01-15T10:30:00"
-}
-```
-
-### Exemplo de Resposta - Moto
-```json
-{
-  "id": 1,
-  "placa": "ABC1234",
-  "modelo": "SPORT",
-  "categoria": "VERDE",
-  "observacao": "Moto em perfeito estado",
-  "dataHoraEntrada": "2024-01-15T10:30:00",
-  "imagemUrl": null
-}
-```
-
-### Exemplo de Resposta - Alerta
-```json
-{
-  "id": 2,
-  "placa": "XYZ9999",
-  "categoria": "AMARELA",
-  "dataHoraEntrada": "2025-11-06T13:00:00",
-  "minutosNoPateo": 45,
-  "minutosAcimaDolimite": 30,
-  "nivelAlerta": "CRITICO",
-  "mensagem": "URGENTE! Moto ultrapassou em 30 minutos o limite de 15 minutos para reparos rápidos"
-}
-```
-
-### Exemplo de Resposta - Estatísticas
-```json
-{
-  "totalMotos": 10,
-  "motosVerdes": 3,
-  "motosAmarelas": 2,
-  "motosVermelhas": 3,
-  "motosRoxas": 2,
-  "motosComAlerta": 5,
-  "motosForaDoPrazo": 2,
-  "motosPorModelo": {
-    "SPORT": 4,
-    "MOTTU_E": 3,
-    "MOTTU_POP": 3
-  },
-  "tempoMedioNoPateo": 45.5,
-  "statusGeral": "ATENCAO"
-}
-
-
-## 📚 Documentação
-
-A documentação interativa da API está disponível através do Swagger UI:
-
-- **Swagger UI**: `http://localhost:8081/swagger-ui.html`
-- **OpenAPI JSON**: `http://localhost:8081/v3/api-docs`
+- 🌐 Aplicação disponível em: [motuswatchs4webapp.azurewebsites.net](https://motuswatchs4webapp.azurewebsites.net)
 
 ## 🗄️ Banco de Dados
 
-### Oracle Database
-O projeto utiliza Oracle Database. Configuração de conexão:
+- Banco Oracle SQL hospedado em servidor FIAP.
+- Configuração realizada para a disciplina **Mastering Relational and Non-Relational Database**.
 
-- **JDBC URL**: `jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl`
-- **Username**: `rm559123`
-- **Password**: `fiap`
-- **Driver**: `oracle.jdbc.OracleDriver`
+## 🧩 Integração das Disciplinas e Evidências
 
-### Configuração
-```properties
-# Oracle Database Configuration
-spring.datasource.url=jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl
-spring.datasource.username=rm559123
-spring.datasource.password=fiap
-spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+### **Explicitação e Demonstração de como as Demais Disciplinas foram Aplicadas**
 
-# JPA/Hibernate Configuration
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.database-platform=org.hibernate.dialect.OracleDialect
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.format_sql=true
-spring.jpa.open-in-view=false
-```
+O projeto **Motus Watch** foi desenvolvido de forma interdisciplinar, aplicando os conhecimentos de diversas disciplinas do curso:
 
-### Tabelas Criadas Automaticamente
-O Hibernate criará automaticamente as seguintes estruturas no banco Oracle:
-- **Tabela**: `TAB_MOTOS` - Armazena os dados das motocicletas
-- **Sequence**: `MOTO_SEQ` - Gerador de IDs para a tabela TAB_MOTOS
+- **MASTERING RELATIONAL AND NON-RELATIONAL DATABASE**  
+  A aplicação está conectada a um **banco de dados Oracle SQL**, utilizado para o armazenamento e gerenciamento das motocicletas.  
+  Foram aplicadas práticas de modelagem relacional e implementação de scripts SQL, garantindo consistência e performance no acesso aos dados.
 
-## 📊 Modelos de Dados
+- **DEVOPS TOOLS & CLOUD COMPUTING**  
+  O **deploy da aplicação web** foi realizado em nuvem através da **plataforma Microsoft Azure**, permitindo o acesso público ao sistema.  
+  🔗 [motuswatchs4webapp.azurewebsites.net](https://motuswatchs4webapp.azurewebsites.net)  
+  Também foram implementadas práticas de **CI/CD (Integração e Entrega Contínuas)** com repositório GitHub.
 
-### Moto
-```java
-{
-  "id": Long,              // ID único (gerado automaticamente)
-  "placa": String,         // Placa da moto (obrigatório, único)
-  "modelo": Modelo,        // SPORT, MOTTU_E, MOTTU_POP
-  "categoria": Categoria,  // VERDE, AMARELA, VERMELHA, ROXA
-  "observacao": String,    // Observações adicionais (opcional)
-  "dataHoraEntrada": LocalDateTime, // Data/hora de entrada
-  "imagemUrl": String     // URL da imagem (opcional)
-}
-```
+- **MOBILE APPLICATION DEVELOPMENT**  
+  A versão mobile do Motus Watch foi desenvolvida aplicando os conceitos aprendidos em desenvolvimento mobile híbrido.  
+  A demonstração será disponibilizada via YouTube:  
+  🎥 *(link do vídeo será inserido aqui)*
 
-### Enums Disponíveis
+### **Protótipos e Evidências**
+- 🎨 Protótipo no Figma: [https://www.figma.com/design/D4JjlISesUrKATq9rBHYXq/Challenge-Mottu?node-id=0-1&p=f](https://www.figma.com/design/D4JjlISesUrKATq9rBHYXq/Challenge-Mottu?node-id=0-1&p=f)  
+- 📁 Repositório GitHub: [https://github.com/ucarols/Sprint4_java](https://github.com/ucarols/Sprint4_java)  
+- 📜 Scripts SQL e estrutura do banco Oracle.  
+- ☁️ Deploy ativo na Azure.  
+- 📱 Vídeo demonstrativo da aplicação mobile []().
+- 📱 Video de Apresentação: []()
 
-**Modelos:**
-- `SPORT` - Motocicleta esportiva
-- `MOTTU_E` - Mottu elétrica
-- `MOTTU_POP` - Mottu popular
+---
 
-**Categorias:**
-- `VERDE` - Categoria verde
-- `AMARELA` - Categoria amarela
-- `VERMELHA` - Categoria vermelha
-- `ROXA` - Categoria roxa
-
-## 🧪 Testando a API
-
-### Usando cURL
-
-#### Endpoints de Motos
-```bash
-# Listar todas as motos
-curl -X GET http://localhost:8081/api/motos
-
-# Buscar moto por ID
-curl -X GET http://localhost:8081/api/motos/1
-
-# Buscar moto por placa
-curl -X GET http://localhost:8081/api/motos/placa/ABC1234
-
-# Buscar motos por categoria
-curl -X GET http://localhost:8081/api/motos/categoria/AMARELA
-
-# Criar nova moto
-curl -X POST http://localhost:8081/api/motos \
-  -H "Content-Type: application/json" \
-  -d '{
-    "placa": "ABC1234",
-    "modelo": "SPORT",
-    "categoria": "VERDE",
-    "observacao": "Nova moto"
-  }'
-
-# Atualizar moto
-curl -X PUT http://localhost:8081/api/motos/1 \
-  -H "Content-Type: application/json" \
-  -d '{
-    "placa": "ABC1234",
-    "modelo": "MOTTU_E",
-    "categoria": "AMARELA",
-    "observacao": "Moto atualizada"
-  }'
-
-# Deletar moto
-curl -X DELETE http://localhost:8081/api/motos/1
-```
-
-#### Endpoints de Alertas
-```bash
-# Listar motos com alertas ativos
-curl -X GET http://localhost:8081/api/alertas
-
-# Listar motos fora do prazo
-curl -X GET http://localhost:8081/api/alertas/fora-prazo
-
-# Listar motos por prioridade
-curl -X GET http://localhost:8081/api/alertas/prioridade
-```
-
-#### Endpoints de Estatísticas
-```bash
-# Obter dashboard completo
-curl -X GET http://localhost:8081/api/estatisticas
-```
-
-### Integrantes
-- Caroline de Oliveira - RM 559123
-- Giulia Correa Camillo - RM 554473
+### 👥 Integrantes
+- Caroline de Oliveira - RM 559123  
+- Giulia Correa Camillo - RM 554473  
 - Lavinia Soo Hyun Park - RM 555679
